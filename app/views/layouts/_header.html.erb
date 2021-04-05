@@ -6,6 +6,9 @@
         <li><%= link_to "ホーム", root_path %></li>
         <li><%= link_to "利用規約", terms_path %></li>
         <li><%= link_to "ログイン", '#' %></li>
+        <% if user_signed_in? %> 
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <% end %>
       </ul>
     </nav>
   </div>
